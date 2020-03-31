@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="829579f3-58d3-4777-b463-c49363f9a366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="829579f3-58d3-4777-b463-c49363f9a366" name="Default Changelist" comment="footer değişti &#10;about us-&gt; about uss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +100,16 @@
       <option name="presentableId" value="Default" />
       <updated>1585582377051</updated>
       <workItem from="1585582381771" duration="26122000" />
-      <workItem from="1585668765834" duration="533000" />
+      <workItem from="1585668765834" duration="2609000" />
     </task>
+    <task id="LOCAL-00001" summary="footer değişti &#10;about us-&gt; about uss">
+      <created>1585669535370</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585669535370</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,13 +128,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585669000746" />
-    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1585669199355">
+    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1585669579887">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585669199355" />
-    <state x="771" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585669299974">
+    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585669579887" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1585669672180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="771" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585669299974" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585669672180" />
+    <state x="771" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585669543613">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="771" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585669543613" />
   </component>
 </project>
