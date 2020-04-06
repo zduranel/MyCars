@@ -1,0 +1,57 @@
+{% extends "homebase.html" %}
+
+{% block title %} İletişim -- {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+{% block sidebar %}
+    {% include "sidebar.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>İletişim</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+
+
+
+	<!-- Start Customer Reviews -->
+	<div class="customer-reviews-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+
+                        {{ setting.contact|safe }}
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	<!-- End Customer Reviews -->
+
+{% endblock %}
+
