@@ -620,7 +620,7 @@ button:focus{
 	padding-bottom: 0px;
 }
 .bg-f{
-	background-image: url("../images/footer-bg.jpg");
+	background-image: url("../images/all-bg.jpg");
 	background-attachment: scroll;
 	background-clip: initial;
 	background-color: rgba(0, 0, 0, 0);
@@ -781,6 +781,8 @@ button:focus{
     background-position: 0 0;
     position: relative;
 }
+
+
 .all-page-title .container{
 	position: relative;
 	z-index: 2;
