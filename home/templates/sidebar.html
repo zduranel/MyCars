@@ -1,1 +1,28 @@
-{% load static %}
+
+<div class="col-lg-3">
+<div class="row inner-menu-box">
+
+				<div class="col-3">
+					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                         {% load mptt_tags %}
+                    <ul>
+                         {% recursetree category %}
+
+						        <a href="/category/{{ node.slug }}" class="nav-link active" {% if not node.is_leaf_node %} data-toggle="pill"  role="tab" aria-controls="v-pills-home" aria-selected="true"  {% endif %}  >{{ node.title }}</a>
+
+                                            <div class="dropdown-item" aria-labelledby="dropdown-a">
+                                                {% if not node.is_leaf_node %}
+                                                    <ul class="dropdown-item">
+                                                        <li><a class="dropdown-item" href="/category/{{ node.slug }}">{{ children }}</a> </li>
+                                                    </ul>
+                                                {% endif %}
+
+                                            </div>
+
+                         {% endrecursetree %}
+                        </ul>
+					</div>
+				</div>
+</div>
+</div>
+

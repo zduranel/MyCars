@@ -15,7 +15,7 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="/">Anasayfa</a></li>
 						<li class="nav-item"><a class="nav-link" href="/hakkimizda">HAKKIMIZDA</a></li>
-						<li class="nav-item"><a class="nav-link" href="/referanslar">referanslar</a></li>
+						<li class="nav-item"><a class="nav-link" href="/referanslar">Referanslar</a></li>
 
 
 						<li class="nav-item dropdown">
@@ -30,34 +30,17 @@
 
 
 
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">CATEGORY</a>
-                            <div class="dropdown-menu">
-
-
-
-
-                                {% load mptt_tags %}
-                                <ul>
-                                    {% recursetree category %}
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" >{{ node.title }} </a>
-                                            <div class="dropdown-item">
-                                                {% if not node.is_leaf_node %}
-                                                    <ul class="dropdown-item">
-                                                        <li><a class="dropdown-item" href="#">{{ children }}</a> </li>
-                                                    </ul>
-                                                {% endif %}
-
-                                            </div>
-                                        </li>
-                                    {% endrecursetree %}
-                                </ul>
-
-
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                {% block sidebar %}
+                                    {% include "sidebar.html" %}
+                                {% endblock %}
                             </div>
                         </li>
+
+
+
 
 
 

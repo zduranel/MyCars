@@ -10,23 +10,23 @@ from product.models import Product, Category
 def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Product.objects.all()[:4]
-    category =  Category.objects.all()
-    context = {'setting': setting,
-               'category': category,
-               'page':'home',
-               'sliderdata' : sliderdata}
+    category = Category.objects.all()
+    context = {'setting': setting, 'page':'home',
+                'category': category,
+               'sliderdata' : sliderdata
+               }
     return render(request, 'index.html', context)
 
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting}
+    context = {'setting': setting, 'page': 'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
 
 def referanslar(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting}
+    context = {'setting': setting, 'page': 'referanslar'}
     return render(request, 'referanslar.html', context)
 
 
