@@ -1,8 +1,14 @@
 
+
+
 {% load static %}
 <!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+
+
 			<div class="container">
 				<a class="navbar-brand" href="/">
 					<img src="{% static 'images/logo2.png'%}" alt="" />
@@ -26,20 +32,6 @@
 								<a class="dropdown-item" href="#">AĞIR VASITA</a>
 							</div>
 						</li>
-
-
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">CATEGORY</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                {% block sidebar %}
-                                    {% include "sidebar.html" %}
-                                {% endblock %}
-                            </div>
-                        </li>
-
-
 
 
 

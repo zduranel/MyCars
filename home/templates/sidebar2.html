@@ -1,19 +1,19 @@
 
-<div class="col-lg-3">
+
+<li class="nav-item dropdown">
+	<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">CATEGORY</a>
+	<div class="dropdown-menu" aria-labelledby="dropdown-a">
+                          {% block sidebar %}
+                      <div class="col-lg-3">
 <div class="row inner-menu-box">
 
-
 				<div class="col-3">
-
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link dropdown-toggle active" href="" >CATEGORY</a>
-
                          {% load mptt_tags %}
-
                     <ul>
                          {% recursetree category %}
 
-                             <a href="/category/{{ node.slug }}"  class="nav-link active" data-toggle="pill dropdown"  {% if not node.is_leaf_node %}  role="tab" aria-controls="v-pills-home" aria-selected="true" {% endif %}  >{{ node.title }} {% if not node.is_leaf_node %} <i class="fa fa-angle-right"></i> {% endif %} </a>
+                             <a href="/category/{{ node.slug }}" class="nav-link active" {% if not node.is_leaf_node %}  data-toggle="pill"  role="tab" aria-controls="v-pills-home" aria-selected="true" {% endif %}  >{{ node.title }} {% if not node.is_leaf_node %} <i class="fa fa-angle-right"></i> {% endif %} </a>
 
                                             <div class="dropdown-item" aria-labelledby="dropdown-a">
                                                 {% if not node.is_leaf_node %}
@@ -31,3 +31,7 @@
 </div>
 </div>
 
+                  {% endblock %}
+
+	</div>
+</li>
