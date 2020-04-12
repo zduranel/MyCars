@@ -7,9 +7,9 @@ class Category(models.Model):
         ('True','Evet'),
         ('False', 'Hayır'),
     )
-    title = models.CharField(max_length=30)
-    keywords = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
+    title = models.CharField(blank=True,max_length=30)
+    keywords = models.CharField(blank=True,max_length=255)
+    description = models.CharField(blank=True,max_length=255)
     image = models.ImageField(blank=True,upload_to='images/')
     status = models.CharField(max_length=10,choices=STATUS)
     slug=models.SlugField()
@@ -29,13 +29,14 @@ class Product(models.Model):
     )
 
     category=models.ForeignKey(Category, on_delete=models.CASCADE) #relation with category table
-    title = models.CharField(max_length=30)
-    keywords = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
+    title = models.CharField(blank=True,max_length=30)
+    keywords = models.CharField(blank=True,max_length=255)
+    description = models.CharField(blank=True,max_length=255)
     image = models.ImageField(blank=True, upload_to='images/')
     price = models.FloatField()
     amount=models.IntegerField()
     detail = RichTextUploadingField()
+    slug = models.SlugField(blank=True,max_length=30)
 
     status = models.CharField(max_length=10,choices=STATUS)
     create_at = models.DateTimeField(auto_now_add=True)
