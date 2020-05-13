@@ -1,0 +1,74 @@
+{% extends "homebase.html" %}
+
+{% block title %} İ -- {{ setting.company }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+
+
+
+{% block body %}
+
+
+    <!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>İlanlar</h1>
+                    <br>
+                     <div class="col-9">
+
+
+					<div class="tab-content" id="v-pills-tabContent">
+						<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+							<div class="row">
+                                {% for rs in products %}
+
+
+
+								<div class="col-lg-4 col-md-6 special-grid drinks">
+									<div class="gallery-single fix">
+										<img src="{{  rs.image.url }}" class="img-fluid" alt="Image" width="250" style="height:200px;">
+										<div class="why-text">
+											<h4>{{ rs.title }}</h4>
+											<p>{{ rs.amount }} Adet Kaldı</p>
+											<h5> ${{ rs.price }}</h5>
+                                            <a href="#"> incele </a>
+									</div>
+								</div>
+                                </div>
+                                 {% endfor %}
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+	<!-- End Customer Reviews -->
+
+{% endblock %}
+

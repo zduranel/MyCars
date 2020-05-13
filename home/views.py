@@ -7,10 +7,15 @@ from home.models import Setting, ContactFormu, ContactFormMessage
 from product.models import Product, Category
 
 
+
+
+
 def index(request):
     setting = Setting.objects.get(pk=1)
+
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
+
     context = {'setting': setting, 'page':'home',
                 'category': category,
                'sliderdata' : sliderdata
@@ -51,3 +56,11 @@ def iletisim(request):
     context = {'setting': setting,'form': form}
     return render(request, 'iletisim.html', context)
 
+
+def categoryproducts(request, id, slug):
+    category = Category.objects.all()
+    products = Product.objects.filter(category_id=id)
+    context = {'products': products,
+               'category': category
+               }
+    return render(request, 'products.html', context)
