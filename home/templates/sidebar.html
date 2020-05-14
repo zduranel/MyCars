@@ -17,7 +17,7 @@
                     <ul>
                          {% recursetree category %}
 
-                             <a href="/category/{{ node.slug }}"  class="nav-link " data-toggle="pill dropdown"  {% if not node.is_leaf_node %}  role="tab" aria-controls="v-pills-home" aria-selected="true" {% endif %}  >{{ node.title }} {% if not node.is_leaf_node %} <i class="fa fa-angle-right"></i> {% endif %} </a>
+                             <a href="/category/{{ node.id }}/{{ node.slug }}"  class="nav-link " data-toggle="pill dropdown"  {% if not node.is_leaf_node %}  role="tab" aria-controls="v-pills-home" aria-selected="true" {% endif %}  >{{ node.title }} {% if not node.is_leaf_node %} <i class="fa fa-angle-right"></i> {% endif %} </a>
 
                                             <div class="dropdown-item" aria-labelledby="dropdown-a">
                                                 {% if not node.is_leaf_node %}

@@ -1,8 +1,8 @@
 {% extends "homebase.html" %}
 
-{% block title %} İ -- {{ setting.company }} {% endblock %}
-{% block keywords %} {{ setting.keywords }} {% endblock %}
-{% block description %} {{ setting.description }} {% endblock %}
+{% block title %} {{ categorydata.title }} {% endblock %}
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }} {% endblock %}
 
 {% block head %}
     <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
@@ -22,7 +22,9 @@
 				<div class="col-lg-12">
 					<h1>İlanlar</h1>
                     <br>
+
                      <div class="col-9">
+                     <h1>{{ categorydata.title }} Ürünleri</h1>
 
 
 					<div class="tab-content" id="v-pills-tabContent">
@@ -39,7 +41,7 @@
 											<h4>{{ rs.title }}</h4>
 											<p>{{ rs.amount }} Adet Kaldı</p>
 											<h5> ${{ rs.price }}</h5>
-                                            <a href="#"> incele </a>
+                                            <a class="btn btn-lg btn-circle btn-outline-new-white" href="/product/{{ rs.id }}/{{ rs.slug }}">İncele</a>
 									</div>
 								</div>
                                 </div>

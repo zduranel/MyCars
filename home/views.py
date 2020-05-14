@@ -59,8 +59,11 @@ def iletisim(request):
 
 def categoryproducts(request, id, slug):
     category = Category.objects.all()
+    categorydata = Category.objects.get(pk=id)
     products = Product.objects.filter(category_id=id)
     context = {'products': products,
-               'category': category
+               'category': category,
+               'categorydata':categorydata
+
                }
     return render(request, 'products.html', context)
