@@ -4,9 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.models import Setting, ContactFormu, ContactFormMessage
-from product.models import Product, Category
-
-
+from product.models import Product, Category, Images
 
 
 
@@ -15,10 +13,19 @@ def index(request):
 
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
+    dayproducts = Product.objects.all()[:4]
+    lastproducts = Product.objects.all().order_by('-id')[:4]
+    randomproducts = Product.objects.all().order_by('?')[:4]
+
 
     context = {'setting': setting, 'page':'home',
                 'category': category,
-               'sliderdata' : sliderdata
+               'sliderdata' : sliderdata,
+               'dayproducts' : dayproducts,
+               'lastproducts' : lastproducts,
+               'randomproducts' : randomproducts
+
+
                }
     return render(request, 'index.html', context)
 
@@ -67,3 +74,15 @@ def categoryproducts(request, id, slug):
 
                }
     return render(request, 'products.html', context)
+
+def product_details(request,id,slug):
+    category = Category.objects.all()
+    product = Product.objects.get(pk=id)
+    images = Images.objects.filter(product_id=id)
+    context = {'product': product,
+               'category': category,
+               'images': images
+
+               }
+    return render(request, 'product_detail.html',context)
+
