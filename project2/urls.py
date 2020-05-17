@@ -31,6 +31,12 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('category/<int:id>/<slug:slug>/', views.categoryproducts, name='categoryproducts'),
     path('product/<int:id>/<slug:slug>/', views.product_details, name='product_details'),
+    path('search/', views.product_search, name='product_search'),
+    path('search_auto/', views.product_search_auto, name='product_search_auto'),
+    path('asearch/', views.product_asearch, name='product_asearch'),
+    path('logout/', views.logout_view, name='logout_view'),
+    path('login/', views.login_view, name='login_view'),
+    path('signup/', views.signup_view, name='signup_view'),
 ]
 
 if settings.DEBUG: # new
