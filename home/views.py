@@ -6,8 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from home.forms import SearchForm
-from home.models import Setting, ContactFormu, ContactFormMessage
+from home.forms import SearchForm, SignUpForm
+from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
 from product.models import Product, Category, Images, Comment
 
 
@@ -159,12 +159,27 @@ def login_view(request):
 
 def signup_view(request):
     if request.method == 'POST':
-        return HttpResponse("Sign Up")
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate( username=username, password=password)
+            login(request, user)
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.image = "images/users/user.png"
+            data.save()
+            messages.success(request,"ÜYE BAŞARILI")
+            return HttpResponseRedirect('/')
 
+
+    form = SignUpForm()
     category = Category.objects.all()
     context = {'category': category,
-
-                   }
+               'form' : form,
+              }
 
     return render(request, 'signup.html', context)
 

@@ -88,24 +88,24 @@
 
                     <li class="nav-item dropdown">
                         {% if user.id is not None %}
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">{{ user.first_name }}</a>
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">{{ user.username }}</a>
                         {% else %}
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Login</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-a">
 
-								<a class="fa fa-unlock-alt" href="/login/">Login</a>
-                                <a class="fa fa-unlock-alt" href="/signup/">Register</a>
+								<a class="dropdown-item fa fa-unlock-alt" href="/login/">Login</a>
+                                <a class="dropdown-item fa fa-unlock-alt" href="/signup/">Register</a>
 							</div>
 
                         {% endif %}
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 
 
-								<a class="fa fa-user-o" href="/">Hesabım</a>
-								<a class="fa fa-heart-o" href="/">My Wishlist</a>
-								<a class="fa fa-exchange" href="/">Compare</a>
-                                <a class="fa fa-check" href="/">Checkoute</a>
-								<a class="fa fa-unlock-alt" href="/logout/">Logout</a>
+								<a class="dropdown-item fa fa-user-plus" href="/user"> Hesabım</a>
+								<a class="dropdown-item fa fa-heart-o" href="/"> My Wish</a>
+								<a class="dropdown-item fa fa-exchange" href="/"> Compare</a>
+                                <a class="dropdown-item fa fa-check" href="/"> Checkoute</a>
+								<a class="dropdown-item fa fa-unlock-alt" href="/logout/"> Logout</a>
 							</div>
 
 						</li>

@@ -1,0 +1,104 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} Profile {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+
+
+
+{% block body %}
+
+
+    <!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>User Profile</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+
+
+
+	<!-- Start Customer Reviews -->
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+
+                        {% include "user_panel.html" %}
+
+				</div>
+                <div class="col-md-9">
+                    <div class="section-title">
+                        <h3 class="title">İletişim Bilgileri</h3>
+                    </div>
+
+
+                    <table class="shopping-cart-table table">
+                        <thead>
+                            <tr>
+                                <th class="text-left"> </th>
+                                <td class="thumb"><img src="{{ profile.image.url }}" width="200" style="height: 150px" alt=""> </td>
+                            </tr>
+
+<tr>
+                                <th class="text-left">Name Surname</th>
+                                <th class="text-left">{{ profile.user_name }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Email</th>
+                                 <th class="text-left">{{ profile.user.email }}</th>
+    </tr>
+<tr>
+                                <th class="text-left">Phone</th>
+                                 <th class="text-left">{{ profile.phone }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Adress</th>
+                                 <th class="text-left">{{ profile.adress }}</th>
+</tr>
+
+<tr>
+                                <th class="text-left">Cithy</th>
+                                <th class="text-left">{{ profile.city }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Country</th>
+                                <th class="text-left">{{ profile.country }}</th>
+</tr>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	<!-- End Customer Reviews -->
+
+{% endblock %}
+

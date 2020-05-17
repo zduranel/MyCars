@@ -1,6 +1,6 @@
 {% extends "homebase.html" %}
 
-{% block title %} İletişim -- {{ setting.company }} {% endblock %}
+{% block title %} Register -- {{ setting.company }} {% endblock %}
 {% block keywords %} {{ setting.keywords }} {% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 
@@ -20,7 +20,12 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Login Formu</h1>
+					<h1>User Register</h1>
+
+                   </div>
+            </div>
+        </div>
+    </div>
 
 	<!-- End All Pages -->
 
@@ -45,18 +50,24 @@
                             {% endfor %}
                         {% endif %}
 
-
-                        <form action="" method="post">
+                        <form method="post">
                             {% csrf_token %}
-                            <div class="form-group">
-                                <input class="input" type="text" name="username" placeholder="User Name">
-                            </div>
-                            <div class="form-group">
-                                <input class="input" type="password" name="password" placeholder="Password">
-                            </div>
-
-                            <input type="submit" value="Login">
+                            {% for field in form %}
+                            <p>
+                                {{ field.label_tag }}<br>
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <small style="color: grey">{{ field.help_text }}</small>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                             </p>
+                             {% endfor %}
+                            <button type="submit"> Register </button>
                         </form>
+
+
 
 					</div>
 				</div>
@@ -66,10 +77,7 @@
 
         </div>
     </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
 
