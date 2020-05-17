@@ -70,7 +70,7 @@ class CategoryAdmin2(DraggableMPTTAdmin):
     related_products_cumulative_count.short_description = 'Related products (in tree)'
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['subject','comment','product','user','status']
+    list_display = ['subject','email','comment','product','status']
     list_filter = ['status']
 
 

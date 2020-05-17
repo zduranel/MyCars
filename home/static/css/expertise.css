@@ -1,0 +1,117 @@
+﻿/* --------------------------------------------------------
+--- B2 Yazilim A.S.
+--- +90 (212) 320 7356
+--- www.b2yazilim.com
+--- info@b2yazilim.com
+--------------------------------------------------------*/
+
+/* GENERAL
+--------------------------------------------------------*/
+.exIcons { width: 64px; text-align: center; display: inline-block; }
+.exIcons span { background-color: #FFF; display: inline-block; margin: 0px 0px 2px 5px; padding: 1px; -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5); -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5); box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5); }
+.exIcons span img { float: left; }
+
+
+/* 3D EKSPERTIZ
+--------------------------------------------------------*/
+.threesixty { position: absolute; overflow: hidden; width: 100%; height: 375px; }
+.threesixty_images { display: none; }
+.threesixty img { position: absolute; top: 0; width: 100%; height: auto; }
+.current-image { visibility: visible; width: 100%; }
+.previous-image { visibility: hidden; width: 0; }
+#spinner { position: absolute; left: 50%; top: 0%; width: 90px; height: 90px; margin-left: -45px; margin-top: -50px; display: none; }
+#spinner span { position: absolute; top: 50%; width: 100%; color: #333; font: 0.8em Arial, Verdana, sans; text-align: center; line-height: 0.6em; margin-top: -0.3em; }
+.threesixty ol { list-style-type: none; margin: 0px; padding: 0px; }
+.threesixty .previous-image,
+.threesixty .current-image { top: -30px; }
+
+.exIcons { left: 0px; }
+.expertise-icon { text-align: left; }
+.expertise-icon > ul > li { width: 130px; margin-bottom: 5px; cursor: default; }
+.expertise-icon > ul > li img { margin-right: 5px; }
+
+.expertise-icon-list { padding: 25px 5px; }
+
+.ekspertiz3B { position: relative; width: 100%; height: 375px; max-width: 565px; margin: auto; }
+.ekspertiz3B img { top: -50px; left: 0px; }
+.ekspertiz3B .exIcons span { margin: 0px 0px 0px 2px; }
+.ekspertiz3B .exIcons span img { width: 21px; }
+
+[id*="exBolge"] { position: absolute; z-index: 2; display: none; margin-left: 0px; margin-top: 0px; }
+
+
+/* 2D EKSPERTIZ
+--------------------------------------------------------*/
+.ekspertiz2B { margin: auto; margin-top: 50px; position: relative;}/*max-width: 510px;*/
+.ekspertiz2B .twoDimensionImage { width: 100%; }
+.ekspertiz2B [id*="exBolge"] { display: inline; top: 0%; left: 0%; }
+.ekspertiz2B #exBolge3 { top: 78%; left: 35%; }
+.ekspertiz2B #exBolge2 { top: 14%; left: 35%; }
+.ekspertiz2B #exBolge6 { top: 78%; left: 43%; }
+.ekspertiz2B #exBolge9 { top: 78%; left: 50%; }
+.ekspertiz2B #exBolge5 { top: 13%; left: 42%; }
+.ekspertiz2B #exBolge8 { top: 13%; left: 49%; }
+.ekspertiz2B #exBolge12 { top: 46%; left: 63%; }
+.ekspertiz2B #exBolge13 { top: 51%; left: 81%; }
+.ekspertiz2B #exBolge7 { top: 47%; left: 48%; }
+.ekspertiz2B #exBolge4 { top: 47%; left: 32%; }
+.ekspertiz2B #exBolge1 { top: 53%; left: 10%; }
+.ekspertiz2B #exBolge10 { top: 14%; left: 56%; }
+.ekspertiz2B #exBolge11 { top: 78%; left: 56%; }
+
+@media (max-width: 500px) {
+    .ekspertiz2B #exBolge3 { top: 78%; left: 31% !important; }
+.ekspertiz2B #exBolge2 { top: 14%; left: 31% !important; }
+.ekspertiz2B #exBolge6 { top: 78%; left: 39% !important; }
+.ekspertiz2B #exBolge9 { top: 78%; left:46% !important; }
+.ekspertiz2B #exBolge5 { top: 13%; left: 38% !important; }
+.ekspertiz2B #exBolge8 { top: 13%; left: 46% !important; }
+.ekspertiz2B #exBolge12 { top: 46%; left: 60% !important; }
+.ekspertiz2B #exBolge13 { top: 51%; left: 78% !important; }
+.ekspertiz2B #exBolge7 { top: 47%; left: 45% !important; }
+.ekspertiz2B #exBolge4 { top: 47%; left: 28% !important; }
+.ekspertiz2B #exBolge1 { top: 53%; left: 7% !important; }
+.ekspertiz2B #exBolge10 { top: 14%; left: 53% !important; }
+.ekspertiz2B #exBolge11 { top: 78%; left: 54% !important; }
+
+}
+
+/* RESPONSIVE
+--------------------------------------------------------*/
+@media (max-width: 600px) {
+    .ekspertiz3B .exIcons { top: 0px; }
+    .ekspertiz3B .exIcons img { width: 21px !important; height: auto; }
+
+    .ekspertiz2B .exIcons img { width: 25px !important; height: auto; }
+    .ekspertiz3B .exIcons, .ekspertiz2B .exIcons { width: 64px; }
+}
+
+@media (max-width: 530px) {
+    .ekspertiz3B .exIcons img { width: 20px !important; height: auto; }
+    .ekspertiz3B .exIcons { top: -10px; }
+
+    .ekspertiz2B .exIcons img { width: 22px !important; height: auto; }
+    .ekspertiz3B .exIcons, .ekspertiz2B .exIcons { width: 58px; }
+}
+
+@media (max-width: 500px) {
+    .ekspertiz3B .exIcons img, .ekspertiz2B .exIcons img { width: 18px !important; height: auto; }
+    .ekspertiz3B .exIcons, .ekspertiz2B .exIcons { width: 50px; }
+}
+
+@media (max-width: 430px) {
+    .ekspertiz3B .exIcons { top: -15px; }
+
+    .ekspertiz3B .exIcons img, .ekspertiz2B .exIcons img { width: 14px !important; height: auto; }
+    .ekspertiz3B .exIcons, .ekspertiz2B .exIcons { width: 42px; }
+}
+
+@media (max-width: 350px) {
+    .ekspertiz3B .exIcons { top: -25px; }
+
+    .ekspertiz3B .exIcons img, .ekspertiz2B .exIcons img { width: 14px !important; height: auto; }
+    .ekspertiz3B .exIcons, .ekspertiz2B .exIcons { width: 42px; }
+}
+
+@media (max-width: 320px) {
+}

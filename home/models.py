@@ -1,8 +1,13 @@
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-from django.forms import TextInput, ModelForm, Textarea
+from django.forms import TextInput, ModelForm, Textarea, TextInput, Select
+
+
+
+from product.models import Product
 
 
 class Setting(models.Model):
@@ -73,3 +78,4 @@ class ContactFormu(ModelForm):
         'message': Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'row': '5'}),
 
     }
+

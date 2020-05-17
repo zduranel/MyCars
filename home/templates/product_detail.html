@@ -1635,6 +1635,80 @@
 </article>
 <!-- // CAR GALLERY - END // -->
 
+                <div class="blog-comment-box">
+							<h3>Comments</h3>
+
+{% load static %}
+
+                            {%  for rs in comments %}
+							<div class="comment-item">
+								<div class="comment-item-left">
+									<img src="{% static 'images/avt-img.jpg'%} " alt="">
+								</div>
+								<div class="comment-item-right">
+									<div class="pull-left">
+										<a href="#">{{ rs.user.first_name }}</a>
+									</div>
+									<div class="pull-right">
+										<i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>{{rs.create_at}}</span>
+									</div>
+
+                                    <div class="des-l">
+										<p> Subject : {{ rs.subject }}</p>
+									</div>
+
+                                    <div class="des-l">
+										<p> E-Mail : {{ rs.email }}</p>
+									</div>
+									<div class="des-l">
+										<p>{{ rs.comment }}</p>
+									</div>
+									<a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+								</div>
+							</div>
+                            {% endfor %}
+
+
+
+						</div>
+						<div class="comment-respond-box">
+							<h3>Leave your comment </h3>
+
+							<div class="comment-respond-form">
+								<form id="commentrespondform" class="comment-form-respond row" method="post" action="/product/addcomment/{{ product.id }}">
+									<div class="col-lg-6 col-md-6 col-sm-6">
+                                        {% csrf_token %}
+										<div class="form-group">
+											<input id="id_subject" class="form-control" name="subject" placeholder="Subject" type="text">
+										</div>
+										<div class="form-group">
+											<input id="id_email" class="form-control" name="email" placeholder="Your Email" type="email">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-6">
+										<div class="form-group">
+											<textarea class="form-control" id="id_comment" name="comment" placeholder="Your Message" rows="2"></textarea>
+										</div>
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										  {% if user.id is not None %}
+										<button class="btn btn-submit">Submit comment</button>
+                                        {% else %}
+                                        Yorum Eklemek için <a href="/login" >Login</a> Olunuz
+                                        {% endif %}
+
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+									</div>
+								</form>
+							</div>
+						</div>
+
 
 
 

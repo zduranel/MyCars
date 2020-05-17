@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from product.models import CommentForm,Comment
+from product.models import CommentForm, Comment
 
 
 def index(request):
@@ -23,7 +23,7 @@ def addcomment(request,id):
             data.product_id = id
             data.subject = form.cleaned_data['subject']
             data.comment = form.cleaned_data['comment']
-            data.rate = form.cleaned_data['rate']
+            data.email = form.cleaned_data['email']
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
             messages.success(request, "Yorum Gönderildi")
