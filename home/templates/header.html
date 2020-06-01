@@ -60,26 +60,26 @@
 
 
                     <div class="header-search">
-                        <form action="/search/" methot="post">
+                        <form action="/search/" method="post">
                             {% csrf_token %}
-                            <input id="query" name="query" class="input search-input" type="text" placeholder="Enter Your Keyword">
+                            <input id="query" name="query" type="text" placeholder="Enter Your Keyword">
 
-                            {% load mptt_tags %}
-                            <select name="catid" class="input search-categories">
-                                <option value="0">All Category</option>
+{#                            {% load mptt_tags %}#}
+{#                            <select name="catid" class="input search-categories">#}
+{#                                <option value="0">All Category</option>#}
+{##}
+{#                              <!-- recursetree category %} -->#}
+{#                                    {% if node.is_leaf_node %} <option value="{{ node.id }}">{{ node.title }}</option> {% endif %}#}
+{#                                    {% if not node.is_leaf_node %}#}
+{#                                        <optgroup label="{{ node.title }}">#}
+{#                                            {{ children }}#}
+{#                                        </optgroup>#}
+{#                                    {% endif %}#}
+{#                                <!-- endrecursetree %}-->#}
+{##}
+{#                            </select>#}
 
-                              <!-- recursetree category %} -->
-                                    {% if node.is_leaf_node %} <option value="{{ node.id }}">{{ node.title }}</option> {% endif %}
-                                    {% if not node.is_leaf_node %}
-                                        <optgroup label="{{ node.title }}">
-                                            {{ children }}
-                                        </optgroup>
-                                    {% endif %}
-                                <!-- endrecursetree %}-->
-
-                            </select>
-
-                            <button class="search-btn"><i class="fa fa-search"> </i> </button>
+                            <button class="btn" type="submit"><i class="fa fa-search"> </i> </button>
 
                         </form>
                     </div>
@@ -93,7 +93,8 @@
                         {% if user.id is not None %}
 
 
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">{{ user.username }}<img src="{{ profile.image.url }}" width="35" height="35" alt=""></a>
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">{{ user.username }}
+                                <img src="{{ profile.image.url }}" width="35" height="35" alt=""></a>
 
 
 

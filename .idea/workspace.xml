@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="829579f3-58d3-4777-b463-c49363f9a366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/order/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/Shopcart_products.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/products_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/products_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project2/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project2/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +140,7 @@
       <workItem from="1589678246954" duration="363000" />
       <workItem from="1589679594895" duration="37768000" />
       <workItem from="1590069982725" duration="630000" />
-      <workItem from="1591038317859" duration="10961000" />
+      <workItem from="1591038317859" duration="14120000" />
     </task>
     <task id="LOCAL-00001" summary="footer değişti &#10;about us-&gt; about uss">
       <created>1585669535370</created>
@@ -253,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589759162939</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="genel güncellemeler">
+      <created>1591052169664</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591052169664</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +261,8 @@
     <MESSAGE value="gece içinde güncellenecek bazı hatalar var" />
     <MESSAGE value="genel güncelleme" />
     <MESSAGE value="26.video bitti 26.5 çok karışıktı hocam bu arada" />
-    <option name="LAST_COMMIT_MESSAGE" value="26.video bitti 26.5 çok karışıktı hocam bu arada" />
+    <MESSAGE value="genel güncellemeler" />
+    <option name="LAST_COMMIT_MESSAGE" value="genel güncellemeler" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Intentions" timestamp="1586217797586">
@@ -286,10 +281,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="719" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591048277204" />
-    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1589759161153">
+    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1591052166849">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589759161153" />
+    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591052166849" />
     <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1591041903070">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

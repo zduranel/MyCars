@@ -23,13 +23,16 @@ def index(request):
     randomproducts = Product.objects.all().order_by('?')[:4]
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
 
+    profile = UserProfile.objects.get(user_id=current_user.id)
+
 
     context = {'setting': setting, 'page':'home',
                 'category': category,
                'sliderdata' : sliderdata,
                'dayproducts' : dayproducts,
                'lastproducts' : lastproducts,
-               'randomproducts' : randomproducts
+               'randomproducts' : randomproducts,
+               'profile': profile
 
 
                }
@@ -100,16 +103,14 @@ def product_search(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             category = Category.objects.all()
-
             query = form.cleaned_data['query']
-            catid = form.cleaned_data['catid']
-            if catid == 0:
-                 products = Product.objects.filter(title__icontains=query)
-            else:
-                 products = Product.objects.filter(title__icontains=query,category_id=catid)
+            products = Product.objects.filter(title__icontains=query)
+           # else:
+           #       products = Product.objects.filter(title__icontains=query,category_id=catid)
 
             context = {'products': products,
                        'category': category
+
                       }
 
             return render(request, 'products_search.html', context)
