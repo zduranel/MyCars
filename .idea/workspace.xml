@@ -2,29 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="829579f3-58d3-4777-b463-c49363f9a366" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/migrations/0006_userprofile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/migrations/0013_auto_20200517_2305.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/users/all-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/Shopcart_products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/templates/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project2/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project2/urls.py" afterDir="false" />
@@ -57,14 +51,7 @@
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
       </path>
     </expand>
     <select />
@@ -75,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -105,16 +92,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/order/templates" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\project2\order\templates" />
+      <recent name="C:\Django\project2\order" />
       <recent name="C:\Django\project2\user\templates" />
       <recent name="C:\Django\project2\user" />
       <recent name="C:\Django\project2\home\templates" />
-      <recent name="C:\Django\project2\home" />
-      <recent name="C:\Django\project2\product" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,7 +151,9 @@
       <workItem from="1589670453608" duration="147000" />
       <workItem from="1589670701786" duration="4784000" />
       <workItem from="1589678246954" duration="363000" />
-      <workItem from="1589679594895" duration="35154000" />
+      <workItem from="1589679594895" duration="37768000" />
+      <workItem from="1590069982725" duration="630000" />
+      <workItem from="1591038317859" duration="10961000" />
     </task>
     <task id="LOCAL-00001" summary="footer değişti &#10;about us-&gt; about uss">
       <created>1585669535370</created>
@@ -257,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589731100307</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="26.video bitti 26.5 çok karışıktı hocam bu arada">
+      <created>1589759162939</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1589759162939</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +266,8 @@
     <MESSAGE value="güncelleme genel" />
     <MESSAGE value="gece içinde güncellenecek bazı hatalar var" />
     <MESSAGE value="genel güncelleme" />
-    <option name="LAST_COMMIT_MESSAGE" value="genel güncelleme" />
+    <MESSAGE value="26.video bitti 26.5 çok karışıktı hocam bu arada" />
+    <option name="LAST_COMMIT_MESSAGE" value="26.video bitti 26.5 çok karışıktı hocam bu arada" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Intentions" timestamp="1586217797586">
@@ -285,14 +282,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="460" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589670510512" />
-    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1589731098597">
+    <state x="719" y="330" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591048277204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589731098597" />
-    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1586698201436">
+    <state x="719" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591048277204" />
+    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1589759161153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586698201436" />
+    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1589759161153" />
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1591041903070">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591041903070" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589670537716">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -305,10 +306,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585669672180" />
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1589679594970">
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1591038328950">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589679594970" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591038328950" />
     <state x="771" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586728405672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

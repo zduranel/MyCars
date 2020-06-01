@@ -1,0 +1,96 @@
+{% extends "homebase.html" %}
+
+{% block title %} Shop Cart {% endblock %}
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+    <!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Shop Cart Products</h1>
+				</div>
+			</div>
+		</div>
+	<!-- End All Pages -->
+	</div>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+
+    <table class="shopping-cart-table table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th></th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Total</th>
+                <th class="text-right"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rs in schopcart %}
+            <tr>
+                <td class="thumb"><img src="{{ rs.product.image.url }}" alt=""> </td>
+                <td class="details">
+                    <a href="#">{{ rs.product }}</a>
+                    <ul>
+                        <li><span>Colour</span></li>
+                    </ul>
+                </td>
+                <td class="price text-center"><strong>${{ rs.product.price }}</strong><br><del class="font-weak"><small>$40.00</small></del> </td>
+                <td class="qty text-center"><strong>{{ rs.quantity }}</strong></td>
+                <td class="total text-center"><strong class="primary-color">${{ rs.amount }}</strong> </td>
+                <td class="text-right"><a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Gerçekten Silinsinmi ?')" class="main-btn icon-btn"><i class="fa fa-close"></i> </a> </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th class="empty" colspan="3"></th>
+                <th>SUBTOTAL</th>
+                <th  colspan="2" class="sub-total">${{ total }}</th>
+             </tr>
+
+            <tr>
+                <th class="empty" colspan="3"></th>
+                <th>SHİPPİNG</th>
+                <th  colspan="2" >FREE SHİPPİNG</th>
+             </tr>
+
+            <tr>
+                <th class="empty" colspan="3"></th>
+                <th>TOTAL</th>
+                <th  colspan="2" class="sub-total">${{ total }}</th>
+             </tr>
+
+
+        </tfoot>
+
+
+    </table>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

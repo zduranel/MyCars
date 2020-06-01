@@ -6,6 +6,14 @@
 
 				<div class="col-9">
 
+                {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
                  <div class="row">
 				    <div class="col-lg-12">
 					    <div class="heading-title text-center">
@@ -32,6 +40,9 @@
 											<p>{{ rs.keywords }}</p>
 											<h5> ${{ rs.price }}</h5>
                                             <a class="btn btn-lg btn-circle btn-outline-new-white" href="/product/{{ rs.id }}/{{ rs.slug }}">İncele</a>
+
+                                            <a class="" href="/order/addtocart/{{ rs.id }}"><i class="fa fa-shopping-cart"></i>Add To Cart </a>
+
 										</div>
 									</div>
 								</div>
@@ -42,6 +53,7 @@
                             </div>
 						</div>
 					</div>
+
 
 
 
@@ -72,6 +84,8 @@
 											<p>{{ rs.keywords }}</p>
 											<h5> ${{ rs.price }}</h5>
                                             <a class="btn btn-lg btn-circle btn-outline-new-white" href="/product/{{ rs.id }}/{{ rs.slug }}">İncele</a>
+                                            <a class="" href="/order/addtocart/{{ rs.id }}"><i class="fa fa-shopping-cart"></i>Add To Cart </a>
+
 										</div>
 									</div>
 								</div>
