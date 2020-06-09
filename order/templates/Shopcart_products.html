@@ -36,7 +36,7 @@
                 <th>Product</th>
                 <th></th>
                 <th class="text-center">Price</th>
-                <th class="text-center">Quantity</th>
+                <th class="text-center">Odd</th>
                 <th class="text-center">Total</th>
                 <th class="text-right"></th>
             </tr>
@@ -48,10 +48,10 @@
                 <td class="details">
                     <a href="#">{{ rs.product }}</a>
                     <ul>
-                        <li><span>Colour</span></li>
+                        <li><span></span></li>
                     </ul>
                 </td>
-                <td class="price text-center"><strong>${{ rs.product.price }}</strong><br><del class="font-weak"><small>$40.00</small></del> </td>
+                <td class="price text-center"><strong>${{ rs.product.price }}</strong><br><del class="font-weak"><small></small></del> </td>
                 <td class="qty text-center"><strong>{{ rs.quantity }}</strong></td>
                 <td class="total text-center"><strong class="primary-color">${{ rs.amount }}</strong> </td>
                 <td class="text-right"><a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Gerçekten Silinsinmi ?')" class="main-btn icon-btn"><i class="fa fa-close"></i> </a> </td>
@@ -78,9 +78,13 @@
                 <th  colspan="2" class="sub-total">${{ total }}</th>
              </tr>
 
+            <tr>
+                <th class="empty" colspan="3"></th>
+                <th></th>
+                <th  colspan="2" class="sub-total"><a href="/order/orderproduct" class="primary-btn">BUY A Car</a></th>
+             </tr>
 
         </tfoot>
-
 
     </table>
 

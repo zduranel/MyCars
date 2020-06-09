@@ -1,12 +1,16 @@
-from pyexpat.errors import messages
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 from django.contrib.auth.decorators import login_required
+
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from home.models import UserProfile
 from product.models import Category
+from user.forms import UserUpdateForm , ProfileUpdateForm
 
 
 def index(request):
@@ -29,7 +33,7 @@ def user_update(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request,'Uğptade')
+            messages.success(request,'Uptaded')
             return redirect('/user')
     else:
         category = Category.objects.all()
@@ -53,7 +57,7 @@ def change_password(request):
             messages.success(request, 'Pw uptaded')
             return HttpResponseRedirect('/user')
         else:
-            messages.warning(request, 'Pls correnst.<br>' + str(form.errors))
+            messages.warning(request, 'Pls correct the errow below.<br>' + str(form.errors))
             return HttpResponseRedirect('/user/password')
     else:
         category = Category.objects.all()

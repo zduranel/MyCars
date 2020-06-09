@@ -44,10 +44,23 @@
                     </div>
 
 
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+
                     <table class="shopping-cart-table table">
                         <thead>
                             <tr>
-                                <th class="text-left"> </th>
+                                <th class="text-left">
+                                    <a href="/user/update" class="primary-btn">Update Profile</a>
+                                    <a href="/user/password" class="primary-btn">Change Password</a>
+                                </th>
                                 <td class="thumb"><img src="{{ profile.image.url }}" width="200" style="height: 150px" alt=""> </td>
                             </tr>
 
