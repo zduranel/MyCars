@@ -9,10 +9,11 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from home.models import UserProfile
-from product.models import Category
+from order.models import Order, OrderProduct
+from product.models import Category, Comment
 from user.forms import UserUpdateForm , ProfileUpdateForm
 
-
+@login_required(login_url='/login')
 def index(request):
     category = Category.objects.all()
     current_user = request.user
@@ -85,7 +86,7 @@ def orderdetail(request,id):
     category = Category.objects.all()
     current_user = request.user
     order = Order.objects.get(user_id=current_user.id, id=id)
-    orderitems = OrderProduct.objects.get(user_id=current_user.id, id=id)
+    orderitems = OrderProduct.objects.filter(order_id=id)
     context = {'category': category,
                'order': order,
                'orderitems': orderitems,
@@ -99,7 +100,7 @@ def orderdetail(request,id):
 def comments(request):
     category = Category.objects.all()
     current_user = request.user
-    comments = Comment.objecst.filter(user_id=current_user.id)
+    comments = Comment.objects.filter(user_id=current_user.id)
     context = {'category': category,
                'comments': comments,
                }
@@ -113,8 +114,8 @@ def comments(request):
 def deletecomment(request,id):
     current_user = request.user
     Comment.objects.filter(id=id, user_id=current_user.id).delete()
-    messages.success(request, 'Comm Deleted...')
-    return HttpResponseRedirect('user/comments')
+    messages.success(request, 'Comment Deleted...')
+    return HttpResponseRedirect('/user/comments')
 
 @login_required(login_url='/login')
 def addcontent(request):

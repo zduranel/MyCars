@@ -1,0 +1,166 @@
+{% extends "homebase.html" %}
+
+{% block title %} {{ profile.user_name }} Order Detail {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href='{{ setting.icon.url }}'/>
+{% endblock %}
+
+
+
+
+
+{% block body %}
+
+
+    <!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>User Order Detail</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+
+
+
+	<!-- Start Customer Reviews -->
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+
+                        {% include "user_panel.html" %}
+
+				</div>
+                <div class="col-md-9">
+
+                <div class="section-title">
+                        <h3 class="title">Order Shipping İnformation</h3>
+                    </div>
+
+                <table class="shopping-cart-table table">
+                        <thead>
+
+
+<tr>
+                                <th class="text-left">Name Surname</th>
+                                <th class="text-left">{{ order.user_name }}</th>
+</tr>
+
+<tr>
+                                <th class="text-left">Phone</th>
+                                 <th class="text-left">{{ order.phone }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Adress</th>
+                                 <th class="text-left">{{ order.adress }}</th>
+</tr>
+
+<tr>
+                                <th class="text-left">Cithy</th>
+                                <th class="text-left">{{ order.city }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Country</th>
+                                <th class="text-left">{{ order.country }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Status</th>
+                                <th class="text-left">{{ order.status }}</th>
+</tr>
+<tr>
+                                <th class="text-left">Date</th>
+                                <th class="text-left">{{ order.create_at }}</th>
+</tr>
+
+<tr>
+                                <th class="text-left">Shipping İnfo</th>
+                                <th class="text-left">{{ order.adminnote }}</th>
+</tr>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="section-title">
+                        <h3 class="title">Sipariş Detayı</h3>
+                    </div>
+
+
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+
+                    <table class="shopping-cart-table table">
+                        <thead>
+                            <tr>
+                                <th class="text-left"> ID</th>
+                                <th class="text-left"> Product Name</th>
+                                <th class="text-left"> Price </th>
+                                <th class="text-left"> Quantity </th>
+                                <th class="text-left"> Amount </th>
+                                <th class="text-left"> Status </th>
+                                <th class="text-left"> Date </th>
+                            </tr>
+
+                            {% for rs in orderitems %}
+                                    <tr>
+
+                                        <th class="text-left">
+                                            <a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}">
+                                                <img src="{{ rs.product.image.url }}" height="80" width="125"> </a></th>
+
+                                        <th class="text-left">{{ rs.product.title }}</th>
+
+
+                                        <th class="text-left">{{ rs.price }}</th>
+                                        <th class="text-left">{{ rs.quantity }}</th>
+                                        <th class="text-left">{{ rs.amount }}</th>
+                                        <th class="text-left">{{ rs.status }}</th>
+                                        <th class="text-left">{{ rs.create_at }}</th>
+                                    </tr>
+                            {% endfor %}
+
+                        </thead>
+                        <tbody>
+                        <tr>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+			</div>
+
+
+
+
+
+		</div>
+	</div>
+	<!-- End Customer Reviews -->
+
+{% endblock %}
+
