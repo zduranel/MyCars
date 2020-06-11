@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from content.models import Content, Menu, CImages
 from home.forms import SearchForm, SignUpForm
 from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
 from order.models import ShopCart
@@ -18,21 +19,27 @@ def index(request):
     setting = Setting.objects.get(pk=1)
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
+    menu = Menu.objects.all()
     dayproducts = Product.objects.all()[:4]
     lastproducts = Product.objects.all().order_by('-id')[:4]
     randomproducts = Product.objects.all().order_by('?')[:4]
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
+    news = Content.objects.filter(type='haber').order_by('-id')[:4]
+    announcements = Content.objects.filter(type='duyuru').order_by('-id')[:4]
 
     profile = UserProfile.objects.get(user_id=current_user.id)
 
 
     context = {'setting': setting, 'page':'home',
                 'category': category,
-               'sliderdata' : sliderdata,
-               'dayproducts' : dayproducts,
-               'lastproducts' : lastproducts,
-               'randomproducts' : randomproducts,
-               'profile': profile
+                'menu': menu,
+                'news': news,
+                'announcements': announcements,
+                'sliderdata' : sliderdata,
+                'dayproducts' : dayproducts,
+                'lastproducts' : lastproducts,
+                'randomproducts' : randomproducts,
+                'profile': profile
 
 
                }
@@ -86,16 +93,22 @@ def categoryproducts(request, id, slug):
 
 def product_details(request,id,slug):
     category = Category.objects.all()
-    product = Product.objects.get(pk=id)
-    images = Images.objects.filter(product_id=id)
-    comments = Comment.objects.filter(product_id=id,status ='True')
-    context = {'product': product,
-               'category': category,
-               'images': images,
-               'comments' : comments
+    try:
+        product = Product.objects.get(pk=id)
+        images = Images.objects.filter(product_id=id)
+        comments = Comment.objects.filter(product_id=id,status ='True')
+        context = {'product': product,
+                   'category': category,
+                   'images': images,
+                   'comments' : comments
 
-               }
-    return render(request, 'product_detail.html',context)
+                   }
+        return render(request, 'product_detail.html',context)
+
+    except:
+        messages.warning(request, "Hata! İlgili İçerik Bulunamadı")
+        link = '/error'
+        return HttpResponseRedirect(link)
 
 
 def product_search(request):
@@ -185,6 +198,47 @@ def signup_view(request):
               }
 
     return render(request, 'signup.html', context)
+
+def menu(request, id):
+    try:
+        content = Content.objects.get(menu_id=id)
+        link = '/content/' + str(content.id) + '/menu'
+        return HttpResponseRedirect(link)
+    except:
+        messages.warning(request, "Hata! İlgili İçerik Bulunamadı")
+        link = '/error'
+        return HttpResponseRedirect(link)
+
+def contentdetail(request,id,slug):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    try:
+        content = Content.objects.get(pk=id)
+        images = CImages.objects.filter(content_id=id)
+
+        context = {'content': content,
+                   'category': category,
+                   'menu': menu,
+                   'images': images,
+                   }
+
+        return render(request, 'content_detail.html',context)
+
+    except:
+        messages.warning(request, "Hata! İlgili İçerik Bulunamadı")
+        link = '/error'
+        return HttpResponseRedirect(link)
+
+def error(request):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+
+
+    context = {'category': category,
+               'menu': menu,
+               }
+
+    return render(request, 'error_page.html', context)
 
 
 

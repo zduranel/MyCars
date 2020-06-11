@@ -43,6 +43,10 @@ urlpatterns = [
     path('order/', include('order.urls')),
     path('shopcart/', orderviews.shopcart, name='shopcart'),
 
+    path('content/', include('content.urls')),
+    path('menu/<int:id>', views.menu, name='menu'),
+    path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),
+    path('error/', views.error, name='error'),
 ]
 
 if settings.DEBUG: # new
