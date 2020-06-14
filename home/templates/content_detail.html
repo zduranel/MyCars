@@ -36,19 +36,20 @@
             <div class="row">
 
                 <img src="{{ content.image.url }}" height="300" align="left" style="padding: 10px; border-radius: 25px">
-<hr>
+
                 {{ content.detail|safe }}
 
 
 
             <hr>
             </div>
+                 <div class="row">
 
-            <hr>
                 {% for rs in images %}
                      <img src="{{ rs.image.url }}" height="200" alt="">
                  {% endfor %}
             <hr>
+                 </div>
 
         <hr>
         yorumlar

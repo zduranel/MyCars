@@ -46,10 +46,10 @@
 						<li class="nav-item"><a class="nav-link" href="/">Anasayfa</a></li>
 
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">HAKKIMIZDA</a>
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">DETAY</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 
-                            <a class="dropdown-item" href="/hakkimizda">Hakkımızda</a>
+
 
                             {% load mptt_tags %}
 								{% if menu %}
@@ -76,6 +76,7 @@
 
 
 						<li class="nav-item"><a class="nav-link" href="/referanslar">REFERANSLAR</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/hakkimizda">HAKKIMIZDA</a></li>
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">SATINAL</a>
@@ -88,6 +89,7 @@
 
 
 						<li class="nav-item"><a class="nav-link" href="/iletisim">İletişim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/sss">SSS</a></li>
 
 
 
@@ -149,6 +151,7 @@
 								<a class="dropdown-item fa fa-heart-o" href="/user/favorits"> My Favorites</a>
 								<a class="dropdown-item fa fa-exchange" href="/user/orders">My Orders</a>
                                 <a class="dropdown-item fa fa-check" href="/user/comments">My Comments</a>
+                                <a class="dropdown-item fa fa-check" href="/user/contents">My Contents</a>
 								<a class="dropdown-item fa fa-unlock-alt" href="/logout/"> Logout</a>
 							</div>
 

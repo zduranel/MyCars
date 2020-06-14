@@ -8,7 +8,7 @@ from django.shortcuts import render
 # Create your views here.
 from content.models import Content, Menu, CImages
 from home.forms import SearchForm, SignUpForm
-from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
+from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile, FAQ
 from order.models import ShopCart
 from product.models import Product, Category, Images, Comment
 
@@ -24,10 +24,10 @@ def index(request):
     lastproducts = Product.objects.all().order_by('-id')[:4]
     randomproducts = Product.objects.all().order_by('?')[:4]
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
-    news = Content.objects.filter(type='haber').order_by('-id')[:4]
-    announcements = Content.objects.filter(type='duyuru').order_by('-id')[:4]
+    news = Content.objects.filter(type='haber',status='True').order_by('-id')[:4]
+    announcements = Content.objects.filter(type='duyuru',status='True').order_by('-id')[:4]
 
-    profile = UserProfile.objects.get(user_id=current_user.id)
+    profile = UserProfile.objects.filter(user_id=current_user.id)
 
 
     context = {'setting': setting, 'page':'home',
@@ -166,9 +166,9 @@ def login_view(request):
 
 
     category = Category.objects.all()
-    context =       {'category': category,
+    context =  {'category': category,
 
-                    }
+                }
 
     return render(request, 'login.html', context)
 
@@ -241,6 +241,13 @@ def error(request):
     return render(request, 'error_page.html', context)
 
 
+def faq(request):
+    category = Category.objects.all()
+    menu = Menu.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {'category': category,
+               'menu': menu,
+               'faq': faq,
+               }
 
-
-
+    return render(request, 'faq.html', context)

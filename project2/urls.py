@@ -42,6 +42,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('order/', include('order.urls')),
     path('shopcart/', orderviews.shopcart, name='shopcart'),
+    path('sss/', views.faq, name='faq'),
 
     path('content/', include('content.urls')),
     path('menu/<int:id>', views.menu, name='menu'),
