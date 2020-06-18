@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 from content.models import Menu, Content, ContentForm, ContentImageForm, CImages
 from home.models import UserProfile
 from order.models import Order, OrderProduct
-from product.models import Category, Comment
+from product.models import Category, Comment, ProductForm, Product, Images, ImagesForm
 from user.forms import UserUpdateForm , ProfileUpdateForm
 
 @login_required(login_url='/login')
@@ -122,11 +122,9 @@ def deletecomment(request,id):
 @login_required(login_url='/login')
 def contents(request):
     category = Category.objects.all()
-    menu = Menu.objects.all()
     current_user = request.user
-    contents = Content.objects.filter(user_id=current_user.id)
+    contents = Product.objects.filter(user_id=current_user.id)
     context = {'category': category,
-               'menu': menu,
                'contents': contents,
                }
     return render(request,'user_contents.html', context)
@@ -135,19 +133,19 @@ def contents(request):
 @login_required(login_url='/login')
 def addcontent(request):
     if request.method == 'POST':
-        form = ContentForm(request.POST, request.FILES)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             current_user = request.user
-            data = Content()
+            data = Product()
             data.user_id = current_user.id
             data.title = form.cleaned_data['title']
-            data.keywords = form.cleaned_data['keywords']
-            data.description = form.cleaned_data['description']
-            data.image = form.cleaned_data['image']
-            data.type = form.cleaned_data['type']
-            data.slug = form.cleaned_data['slug']
-            data.detail = form.cleaned_data['detail']
-            data.status ='False'
+            data.category = form.cleaned_data['category']
+            data.price = form.cleaned_data['price']
+            data.amount = form.cleaned_data['amount']
+            data.detail=form.cleaned_data['detail']
+            data.image=form.cleaned_data['image']
+            data.slug=form.cleaned_data['slug']
+
             data.save()
             messages.success(request, 'Success')
             return HttpResponseRedirect('/user/contents')
@@ -158,7 +156,7 @@ def addcontent(request):
     else:
         category = Category.objects.all()
         menu = Menu.objects.all()
-        form = ContentForm()
+        form = ProductForm()
         context = {'menu': menu,
                     'category': category,
                     'form': form,
@@ -169,9 +167,9 @@ def addcontent(request):
 
 @login_required(login_url='/login')
 def contentedit(request,id):
-    content = Content.objects.get(id=id)
+    content = Product.objects.get(id=id)
     if request.method == 'POST':
-        form = ContentForm(request.POST, request.FILES, instance=content)
+        form = ProductForm(request.POST, request.FILES, instance=content)
         if form.is_valid():
             form.save()
             messages.success(request, 'Success')
@@ -181,9 +179,9 @@ def contentedit(request,id):
             return HttpResponseRedirect('/user/contentedit/' + str(id))
     else:
         category = Category.objects.all()
-        menu = Menu.objects.all()
-        form = ContentForm(instance=content)
-        context = {'menu': menu,
+
+        form = ProductForm(instance=content)
+        context = {
                    'category': category,
                    'form': form,
                    }
@@ -199,18 +197,18 @@ def contentedit(request,id):
 @login_required(login_url='/login')
 def contentdelete(request,id):
     current_user = request.user
-    Content.objects.filter(id=id,user_id=current_user.id).delete()
+    Product.objects.filter(id=id,user_id=current_user.id).delete()
     messages.success(request, 'Content Deleted...')
     return HttpResponseRedirect('/user/contents')
 
 def contentaddimage(request,id):
     if request.method == 'POST':
         lasturl = request.META.get('HTTP_REFERER')
-        form = ContentImageForm(request.POST, request.FILES)
+        form = ImagesForm(request.POST, request.FILES)
         if form.is_valid():
-            data = CImages()
+            data = Images()
             data.title = form.cleaned_data['title']
-            data.content_id = id
+            data.product_id = id
             data.image = form.cleaned_data['image']
             data.save()
             messages.success(request,'Your İmage has been Success Uploated !')
@@ -220,9 +218,9 @@ def contentaddimage(request,id):
             return HttpResponseRedirect(lasturl)
 
     else:
-        content = Content.objects.get(id=id)
-        images = CImages.objects.filter(content_id=id)
-        form = ContentImageForm()
+        content = Product.objects.get(id=id)
+        images = Images.objects.filter(product_id=id)
+        form = ImagesForm()
         context = {
             'content' : content,
             'images': images,

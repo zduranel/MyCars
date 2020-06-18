@@ -32,7 +32,9 @@ def addtocart(request,id):
 
         if form.is_valid(): #detailden tıklandıysa
             if control==1: #ürün varsa
+
                 data = ShopCart.objects.get(product_id=id)
+                data.user_id = current_user.id
                 data.quantity += form.cleaned_data['quantity']
                 data.save()
             else: #ürün yoksa
@@ -47,6 +49,7 @@ def addtocart(request,id):
     else: #contentten tıklandıysa
         if control == 1:  # ürün varsa
             data = ShopCart.objects.get(product_id=id)
+            data.user_id = current_user.id
             data.quantity += 1
             data.save()
         else:  # ürün yoksa

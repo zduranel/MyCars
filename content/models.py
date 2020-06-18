@@ -10,7 +10,7 @@ from django.utils.safestring import mark_safe
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 
-
+from product.models import Product
 
 
 class Menu(MPTTModel):

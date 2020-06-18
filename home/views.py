@@ -20,9 +20,9 @@ def index(request):
     sliderdata = Product.objects.all()[:4]
     category = Category.objects.all()
     menu = Menu.objects.all()
-    dayproducts = Product.objects.all()[:4]
-    lastproducts = Product.objects.all().order_by('-id')[:4]
-    randomproducts = Product.objects.all().order_by('?')[:4]
+    dayproducts = Product.objects.all()[:20]
+    lastproducts = Product.objects.all().order_by('-id')[:20]
+    randomproducts = Product.objects.all().order_by('?')[:20]
     request.session['cart_items'] = ShopCart.objects.filter(user_id=current_user.id).count()
     news = Content.objects.filter(type='haber',status='True').order_by('-id')[:4]
     announcements = Content.objects.filter(type='duyuru',status='True').order_by('-id')[:4]

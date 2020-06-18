@@ -51,6 +51,7 @@ class Product(models.Model):
     )
 
     category=models.ForeignKey(Category, on_delete=models.CASCADE) #relation with category table
+    user=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     title = models.CharField(blank=True,max_length=30)
     keywords = models.CharField(blank=True,max_length=255)
     description = models.CharField(blank=True,max_length=255)
@@ -73,6 +74,11 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('product_details', kwargs={'slug': self.slug})
+
+class ProductForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ['category','title','price','amount','image','keywords','description','detail','slug']
 
 
 class Comment(models.Model):
@@ -115,3 +121,7 @@ class Images(models.Model):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
     image_tag.short_description = 'Image'
 
+class ImagesForm(ModelForm):
+    class Meta:
+        model = Images
+        fields = ['title','image']

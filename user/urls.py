@@ -23,6 +23,7 @@ urlpatterns = [
 
 
 
+
     # path('addcomment/<int:id>', views.addcomment, name='addcomment'),
 
     # ex: /product/5/

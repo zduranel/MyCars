@@ -121,7 +121,7 @@
                                     </div>
                                     <div class="col-md-7 float-left clearfix">
                                         <span class="Marka">
-                                            {{ product.keywords }}</span>
+                                            {{ product.title }}</span>
                                     </div>
                                 </div>
                             </li>
@@ -144,7 +144,7 @@
                             <li>
                                 <div class="row">
                                     <div class="col-md-5 float-left clearfix">
-                                        <label>Model Yılı</label>
+                                        <label>Adet</label>
                                     </div>
                                     <div class="col-md-7 float-left clearfix">
                                         <span class="cModelYili">
@@ -266,9 +266,9 @@
                             {% csrf_token %}
                             <div class="qty-input">
 
-                                <span class="text-uppercase"> ADET SADECE YEDEK PARÇALARDA GEÇERLİDİR </span>
+                                <span class="text-uppercase"><p>  </p> </span>
 
-                                <input name="quantity" class="input" type="number" min="0" max="{{ product.amount }}" value="1">
+                                <input name="quantity" class="input" type="number" value="1">
 
                             </div>
                             <button type="submit" class="primary-btn"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
@@ -324,6 +324,9 @@
 <!-- // CAR GALLERY - END // -->
 
                 <div class="blog-comment-box">
+
+                {{ product.detail | safe }}
+
 							<h3>Comments</h3>
 
 {% load static %}
